@@ -1,0 +1,4 @@
+name: reunion-skins
+version: '1.0-SNAPSHOT'
+main: dev.briiqn.reunion.backend.ReunionBackendPlugin
+author: Briiqn
