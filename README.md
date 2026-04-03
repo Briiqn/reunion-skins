@@ -1,1 +1,1 @@
-requires at least java 21 to run, may change in the future.
+requires at least java 22 to run, may change in the future.
