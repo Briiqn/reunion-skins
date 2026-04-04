@@ -26,8 +26,6 @@ repositories {
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.21.4-R0.1-SNAPSHOT")
     compileOnly("com.mojang:authlib:3.13.56")
-    implementation("org.mineskin:java-client:3.2.3-SNAPSHOT")
-    implementation("org.mineskin:java-client-jsoup:3.2.3-SNAPSHOT")
 }
 
 tasks {

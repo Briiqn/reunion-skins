@@ -14,17 +14,14 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.messaging.PluginMessageListener;
-import org.mineskin.MineSkinClient;
 
 public final class ReunionMessageListener implements PluginMessageListener {
 
   private final ReunionBackendPlugin plugin;
-  private final MineSkinClient skinClient;
   private final Map<String, String[]> skinCache = new ConcurrentHashMap<>();
 
-  public ReunionMessageListener(ReunionBackendPlugin plugin, MineSkinClient skinClient) {
+  public ReunionMessageListener(ReunionBackendPlugin plugin) {
     this.plugin = plugin;
-    this.skinClient = skinClient;
   }
 
   @Override
@@ -61,7 +58,7 @@ public final class ReunionMessageListener implements PluginMessageListener {
 
         String[] textures = skinCache.computeIfAbsent(hash, k -> {
           try {
-            return MineSkinUploader.upload(skinClient, skinBytes);
+            return MineSkinUploader.upload(skinBytes);
           } catch (Exception e) {
             plugin.getLogger().warning("MineSkin upload failed for " + player.getName() + ": " + e.getMessage());
             return null;
